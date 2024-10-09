@@ -1,0 +1,9 @@
+com/project/pr13/PR130Main.class
+com/project/pr13/format/AsciiTablePrinter.class
+com/project/pr13/PR131Main.class
+com/project/pr13/format/PersonaFormatter.class
+com/project/utilitats/UTF8Utils.class
+com/project/pr13/PR132Main.class
+com/project/utilitats/UtilsCSV.class
+com/project/excepcions/IOFitxerExcepcio.class
+com/project/pr13/PR13Main.class
