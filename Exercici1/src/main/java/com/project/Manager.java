@@ -23,8 +23,8 @@ public class Manager {
         try {
             Configuration configuration = new Configuration();
 
-            configuration.addResource("Ciutat.hbm.xml");
-            configuration.addResource("Ciutada.hbm.xml");
+            configuration.addAnnotatedClass(Ciutat.class);
+            configuration.addAnnotatedClass(Ciutada.class);
 
             StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties())
