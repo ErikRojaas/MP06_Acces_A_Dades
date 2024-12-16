@@ -1,0 +1,10 @@
+com\project\domain\Autor.class
+com\project\domain\Llibre.class
+com\project\dao\Manager.class
+com\project\domain\Exemplar.class
+com\project\sqliteutils\UtilsSQLite.class
+com\project\domain\Prestec.class
+com\project\sqliteutils\MainSQLite.class
+com\project\domain\Persona.class
+com\project\Main.class
+com\project\domain\Biblioteca.class
