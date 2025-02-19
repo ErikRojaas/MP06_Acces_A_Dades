@@ -1,0 +1,109 @@
+{
+  "analisis": [
+    {
+      "imatge": {
+        "nom_fitxer": "02f4b3be2d.jpg"
+      },
+      "analisi": {
+        "nom_comu": "Antílop de pradera",
+        "nom_cientific": "Antilocapra americana",
+        "taxonomia": {
+          "classe": "Mammalia",
+          "ordre": "Artiodactyla",
+          "familia": "Antilocapridae"
+        },
+        "habitat": {
+          "tipus": [
+            "praderas",
+            "estepes"
+          ],
+          "regioGeografica": [
+            "Amèrica del Nord"
+          ],
+          "clima": [
+            "temperat"
+          ]
+        },
+        "dieta": {
+          "tipus": "herbívora",
+          "aliments_principals": [
+            "follaje",
+            "fruïts"
+          ]
+        },
+        "caracteristiques_fisiques": {
+          "mida": {
+            "altura_mitjana_cm": "100",
+            "pes_mitja_kg": "40"
+          },
+          "colors_predominants": [
+            "castany",
+            "blanc"
+          ],
+          "trets_distintius": [
+            "corna curva"
+          ]
+        },
+        "estat_conservacio": {
+          "classificacio_IUCN": "Vulnerable",
+          "amenaces_principals": [
+            "pèrdua d'hàbitat",
+            "caça excessiva"
+          ]
+        }
+      }
+    },
+    {
+      "imatge": {
+        "nom_fitxer": "03d7fc0888.jpg"
+      },
+      "analisi": {
+        "nom_comu": "antílop de la sabana",
+        "nom_cientific": "Hippotragus equinus",
+        "taxonomia": {
+          "classe": "Mamalia",
+          "ordre": "Artiodactyla",
+          "familia": "Bovidae"
+        },
+        "habitat": {
+          "tipus": [
+            "Sabana",
+            "Praderas"
+          ],
+          "regioGeografica": [
+            "Àfrica"
+          ],
+          "clima": [
+            "Temperat"
+          ]
+        },
+        "dieta": {
+          "tipus": "Herbívora",
+          "aliments_principals": [
+            "Hierba",
+            "Fulles"
+          ]
+        },
+        "caracteristiques_fisiques": {
+          "mida": {
+            "altura_mitjana_cm": 120,
+            "pes_mitja_kg": 200
+          },
+          "colors_predominants": [
+            "Groc clar"
+          ],
+          "trets_distintius": [
+            "Hornes curts"
+          ]
+        },
+        "estat_conservacio": {
+          "classificacio_IUCN": "LC",
+          "amenaces_principals": [
+            "Pèrdua d'hàbitat",
+            "Caça furtiva"
+          ]
+        }
+      }
+    }
+  ]
+}
