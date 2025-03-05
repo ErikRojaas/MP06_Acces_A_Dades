@@ -1,14 +1,14 @@
-// Importacions
+// src/exercici3.js
 const fs = require('fs').promises;
 const path = require('path');
 require('dotenv').config();
+const { logger } = require('../../xat-api/src/config/logger'); // Ajusta la ruta si cal
 
-// Constants des de variables d'entorn
 const IMAGES_SUBFOLDER = 'imatges/animals';
 const IMAGE_TYPES = ['.jpg', '.jpeg', '.png', '.gif'];
 const OLLAMA_URL = process.env.CHAT_API_OLLAMA_URL;
 const OLLAMA_MODEL = process.env.CHAT_API_OLLAMA_MODEL_VISION;
-const OUTPUT_FILE_PATH = path.resolve(__dirname, '..', '..', 'data', 'exercici3_resposta.json');  // Ruta del fitxer de sortida
+const OUTPUT_FILE_PATH = path.resolve(__dirname, '..', '..', 'data', 'exercici3_resposta.json');
 
 // Funció per llegir un fitxer i convertir-lo a Base64
 async function imageToBase64(imagePath) {
@@ -21,7 +21,26 @@ async function imageToBase64(imagePath) {
     }
 }
 
-// Funció per fer la petició a Ollama amb més detalls d'error
+// Funció per gestionar els errors d'Ollama de forma centralitzada
+function handleOllamaError(error) {
+    let errorMessage = 'Error en la petició a Ollama';
+    let details = {
+        url: `${OLLAMA_URL}/generate`,
+        model: OLLAMA_MODEL,
+    };
+
+    if (error.response) {
+        errorMessage += `: ${error.response.status} ${error.response.statusText}`;
+        details.response = error.response.data;
+    } else if (error.request) {
+        errorMessage += ': No s\'ha rebut resposta';
+    }
+    logger.error(errorMessage, { ...details, error: error.message }); // Usa el logger
+    return null;
+}
+
+
+// Funció per fer la petició a Ollama
 async function queryOllama(base64Image, prompt) {
     const requestBody = {
         model: OLLAMA_MODEL,
@@ -31,8 +50,8 @@ async function queryOllama(base64Image, prompt) {
     };
 
     try {
-        console.log('Enviant petició a Ollama...');
-        
+        logger.info('Enviant petició a Ollama...');
+
         let response = await fetch(`${OLLAMA_URL}/generate`, {
             method: 'POST',
             headers: {
@@ -42,23 +61,20 @@ async function queryOllama(base64Image, prompt) {
         });
 
         if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
+            throw new Error(`Error HTTP`); // Llança error genèric
         }
 
         const data = await response.json();
 
-        // Verificar si tenim una resposta vàlida
         if (!data || !data.response) {
             throw new Error('La resposta d\'Ollama no té el format esperat');
         }
 
         return data.response;
     } catch (error) {
-        console.error('Error detallat en la petició a Ollama:', error);
-        return null;
+         return handleOllamaError(error);  // Utilitza la funció centralitzada
     }
 }
-
 // Funció per escriure la resposta en un fitxer JSON
 async function saveResponseToFile(responses) {
     const responseStructure = {
