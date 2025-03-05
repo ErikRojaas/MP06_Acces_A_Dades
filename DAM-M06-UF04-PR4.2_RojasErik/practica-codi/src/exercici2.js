@@ -1,10 +1,12 @@
-// Importacions
+// src/exercici2.js
 const csv = require('csv-parser');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-// Constants
+// Importar el logger (assumint que el tens configurat en un fitxer separat)
+const { logger } = require('../../xat-api/src/config/logger');  // Ajusta la ruta si cal
+
 const DATA_SUBFOLDER = 'steamreviews';
 const CSV_GAMES_FILE_NAME = 'games.csv';
 const CSV_REVIEWS_FILE_NAME = 'reviews.csv';
@@ -22,12 +24,30 @@ async function readCSV(filePath) {
     });
 }
 
-// Funció per fer la petició a Ollama amb més detalls d'error
+// Funció per gestionar els errors d'Ollama de forma centralitzada
+function handleOllamaError(error, text) {
+    let errorMessage = 'Error en la petició a Ollama';
+    let details = {
+        url: `${process.env.CHAT_API_OLLAMA_URL}/generate`,
+        model: process.env.CHAT_API_OLLAMA_MODEL_TEXT,
+        promptLength: text.length
+    };
+
+    if (error.response) {
+        errorMessage += `: ${error.response.status} ${error.response.statusText}`;
+        details.response = error.response.data;
+    } else if (error.request) {
+        errorMessage += ': No s\'ha rebut resposta';
+    }
+    logger.error(errorMessage, { ...details, error: error.message }); // Usa el logger
+    return 'error';
+}
+
+// Funció per fer la petició a Ollama
 async function analyzeSentiment(text) {
     try {
-        console.log('Enviant petició a Ollama...');
-        console.log('Model:', process.env.CHAT_API_OLLAMA_MODEL_TEXT);
-        
+        logger.info('Enviant petició a Ollama...', { model: process.env.CHAT_API_OLLAMA_MODEL_TEXT });
+
         const response = await fetch(`${process.env.CHAT_API_OLLAMA_URL}/generate`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -39,28 +59,18 @@ async function analyzeSentiment(text) {
         });
 
         if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
+            throw new Error(`Error HTTP`); // Llança un error genèric
         }
 
         const data = await response.json();
-        
-        // Depuració de la resposta
-        console.log('Resposta completa d\'Ollama:', JSON.stringify(data, null, 2));
-        
-        // Verificar si tenim una resposta vàlida
+
         if (!data || !data.response) {
             throw new Error('La resposta d\'Ollama no té el format esperat');
         }
 
         return data.response.trim().toLowerCase();
     } catch (error) {
-        console.error('Error detallat en la petició a Ollama:', error);
-        console.error('Detalls adicionals:', {
-            url: `${process.env.CHAT_API_OLLAMA_URL}/generate`,
-            model: process.env.CHAT_API_OLLAMA_MODEL_TEXT,
-            promptLength: text.length
-        });
-        return 'error';
+        return handleOllamaError(error, text);  // Utilitza la funció centralitzada
     }
 }
 
