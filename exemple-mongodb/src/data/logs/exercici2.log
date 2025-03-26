@@ -1,0 +1,47 @@
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"La media de ViewCount es: 0"}
+{"level":"info","message":"Número de preguntas con ViewCount mayor que la media: 0"}
+{"level":"info","message":"Número de preguntas con palabras clave en el título: 53"}
+{"level":"info","message":"Informes generados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"La media de ViewCount es: 0"}
+{"level":"info","message":"Número de preguntas con ViewCount mayor que la media: 0"}
+{"level":"info","message":"Número de preguntas con palabras clave en el título: 53"}
+{"level":"info","message":"Informes generados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"La media de ViewCount es: 0"}
+{"level":"info","message":"Número de preguntas con ViewCount mayor que la media: 0"}
+{"level":"info","message":"Número de preguntas con palabras clave en el título: 53"}
+{"level":"info","message":"No se encontraron preguntas con ViewCount mayor que la media."}
+{"level":"info","message":"Informes generados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"error","message":"Error en la ejecución de las consultas: connectToMongo is not defined","stack":"ReferenceError: connectToMongo is not defined\n    at getQuestionsAboveAverage (/home/super/Baixades/JORDI/DAM-M06-UF03-Punt-Partida-NodeJS-main/exemple-mongodb/src/exercici2.js:25:24)\n    at executeQueries (/home/super/Baixades/JORDI/DAM-M06-UF03-Punt-Partida-NodeJS-main/exemple-mongodb/src/exercici2.js:78:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"La media de ViewCount es: 0"}
+{"level":"error","message":"Error en la ejecución de las consultas: connectToMongo is not defined","stack":"ReferenceError: connectToMongo is not defined\n    at getQuestionsAboveAverage (/home/super/Baixades/JORDI/DAM-M06-UF03-Punt-Partida-NodeJS-main/exemple-mongodb/src/exercici2.js:52:22)\n    at executeQueries (/home/super/Baixades/JORDI/DAM-M06-UF03-Punt-Partida-NodeJS-main/exemple-mongodb/src/exercici2.js:106:37)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"La media de ViewCount es: 0"}
+{"level":"info","message":"Número de preguntas con ViewCount mayor que la media: 0"}
+{"level":"info","message":"Número de preguntas con palabras clave en el título: 53"}
+{"level":"info","message":"No se encontraron preguntas con ViewCount mayor que la media."}
+{"level":"info","message":"Informes generados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"La media de ViewCount es: 0"}
+{"level":"info","message":"Número de preguntas con ViewCount mayor que la media: 0"}
+{"level":"info","message":"Número de preguntas con palabras clave en el título: 53"}
+{"level":"info","message":"No se encontraron preguntas con ViewCount mayor que la media."}
+{"level":"info","message":"Informes generados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"La media de ViewCount es: 0"}
+{"level":"info","message":"Número de preguntas con ViewCount mayor que la media: 0"}
+{"level":"info","message":"Número de preguntas con palabras clave en el título: 53"}
+{"level":"info","message":"No se encontraron preguntas con ViewCount mayor que la media."}
+{"level":"info","message":"Informes generados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}

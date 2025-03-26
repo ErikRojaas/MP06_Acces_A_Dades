@@ -1,0 +1,16 @@
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"Leyendo el archivo XML..."}
+{"level":"info","message":"Procesando las entradas..."}
+{"level":"info","message":"Eliminando datos existentes..."}
+{"level":"info","message":"Insertando entradas a MongoDB..."}
+{"level":"info","message":"8903 documentos insertados correctamente."}
+{"level":"info","message":"Datos cargados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
+{"level":"info","message":"Conectado a MongoDB"}
+{"level":"info","message":"Leyendo el archivo XML..."}
+{"level":"info","message":"Procesando las preguntas..."}
+{"level":"info","message":"Eliminando datos existentes..."}
+{"level":"info","message":"Insertando preguntas a MongoDB..."}
+{"level":"info","message":"8903 documentos insertados correctamente."}
+{"level":"info","message":"Datos cargados con éxito!"}
+{"level":"info","message":"Conexión a MongoDB cerrada"}
